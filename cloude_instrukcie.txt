@@ -1,0 +1,31 @@
+KROK 1. - Scenár 1: zákazník zadá potrebné údaje do políèok
+
+1A "Zadajte rozmery miestnosti (mm):" då¾ka, ¹írka, vý¹ka. Následne sa zákazníkovi vygeneruje kváder s polopriehµadnými stenami. Ka¾dá stena bude ma» svoj ¹pecifický názov napríklad: "Stena A", "Stena B", "Stena C", "Stena D".
+
+1B "Zadajte rozmer okna (mm):" då¾ka, ¹írka, vý¹ka; Umiestnenie okna: a na výber opä»: "Stena A", "Stena B", "Stena C", "Stena D". "Vzdialenos» okna od µavého okraja steny:" zákazník vpí¹e vlastnú hodnotu v mm. Vý¹ka okna od podlahy: zákazník vpí¹e vlastnú hodnotu v mm.
+
+1C "Prida» okno na tú istú stenu alebo ïal¹iu?" Tu by bolo switch toogle s hodnotami "áno" a "nie", prièom hodnota "nie" by bola prednastavená.
+
+1D Ak by bola vybratá hodnota "áno", zopakoval by sa krok 1B a 1C a¾ do momentu, kedy by zákazník nevybral mo¾nos» "nie" pri "Prida» okno na tú istú stenu alebo ïal¹iu?".
+
+1E "Zadajte rozmer dverí prípadne stavebného otvoru (mm):" då¾ka, ¹írka, vý¹ka; alebo tam vybra» mo¾nos»: bez dverí / stavebného otvoru. "Umiestnenie dverí / stavebného otvoru:" a na výber opä»: "Stena A", "Stena B", "Stena C", "Stena D". "Vzdialenos» od µavého okraja steny:" zákazník vpí¹e vlastnú hodnotu v mm.
+
+KROK 1. - Scenár 2: zákazník nahrá nákres v podobe náèrtu ceruzkou alebo perom.
+
+POMOC pre AI: Model musí analyzova» zadané dáta v kroku 1 a Scenári 1 (1A a¾ 1E) alebo musí analyzova» obrázok zo Scenára 2, preèíta» rukou písané kótovacie èiary a sprievodný text. Pri oboch scénaroch musí následne vráti» ¹truktúrované dáta vo formáte JSON. Webový systém vezme tento JSON a automaticky vykreslí miestnos» so zadanými rozmermi aj s oknami, dverami, stavebnými otvormi bez toho, aby zákazník musel manuálne klika» a posúva» okná v editore. Steny by mali svoje oznaèenie a boli by okótované. Ak by bolo mo¾né, funkcionalita otáèanie prstom v 3D by bola vítaná. Ako pomoc pre AI, mô¾e navrhnú» vygenerovanie prázdneho 3D kvádra (miestnos») s týmito rozmermi v prostredí ako Three.js alebo Babylon.js (JavaScriptové kni¾nice pre 3D grafiku na webe). Prípadne pou¾ite svoje vlastné znalosti a optimalizáciu.
+
+-----------------------------------------
+KROK 2. Vyberte si zo zoznamu spotrebièov:
+POMOC pre AI: v¹etky spotrebièe budú ma» toogle switch "áno"/"nie" s prednastavenou hodnotou "nie". Tento krok slú¾i k zberu striktných technických obmedzení.
+
+2A Teplovzdu¹ná rúra: ak zákazník potvrdí prednastavenú hodnotu na "áno", potom sa zobrazia toogle switch s aktívnou hodnotou ©írka: 600mm a vedµa toho pole Vý¹ka rúry: ¹tandardná 600mm, kompaktná 450mm.
+
+2B Mikrovlnná rúra: ak zákazník potvrdí prednastavenú hodnotu na "áno", potom sa zobrazia toogle switch s aktívnou hodnotou ©írka: 600mm a vedµa toho pole Vý¹ka rúry: ¹tandardná 600mm, kompaktná 450mm, alebo zákazník zadá vlastný rozmer vý¹ky podµa schémy.
+
+2C Varný panel: ak zákazník potvrdí prednastavenú hodnotu na "áno", potom sa rozbalí dropdown s mo¾nos»ou výberu 1 hodnoty: indukèný, sklokeramický, plynový, kombinácia indukcie a odsávaèa. Následne si zákazník vyberie ¹írku z nasledovných hodnôt: do 600mm skrinky, do 700mm skrinky, do 800mm skrinky, do 900mm skrinky, alebo zadá presný rozmer v mm.
+
+2D Odsávaè pár: ak zákazník potvrdí prednastavenú hodnotu na "áno", potom sa rozbalí dropdown s mo¾nos»ou výberu 1 hodnoty: plne integrovaný, komínový, ostrovèekový, stropný integrovaný. Následne si zákazník vyberie ¹írku z nasledovných hodnôt: do 600mm skrinky alebo priestoru, do 700mm skrinky alebo priestoru, do 800mm skrinky alebo priestoru, do 900mm skrinky alebo priestoru, alebo zadá presný rozmer odsávaèa v mm.
+
+2E Umývaèka riadu: ak zákazník potvrdí prednastavenú hodnotu na "áno", potom sa zobrazia radio button s mo¾nos»ou výberu 1 hodnoty: plne integrovaná, plne integrovaná s horným panelom, voµne stojaca. Následne sa zobrazí dropdown: ©írka umývaèky: s hodnotami: "600 mm", "450 mm"
+
+2F Kombinovaná chladnièka s mraznièkou: ak zákazník potrvrdí prednastavenú hodnotu na "áno", potom sa zobrazia radio button s mo¾nos»ou výberu 1 hodnoty: plne integrovaná alebo voµne stojaca. Ak si vyberie plne integrovanú, pripadajú do úvahy len 2 mo¾nosti: do 600mm skrinky, do 700mm skrinky; Vý¹ka integrovanej kombinovanej chladnièky s mraznièkou: zákazník zadá hodnotu v mm. Ak si vyberie voµne stojacu, tak bude na výber 600mm, 700mm, 800mm, 900mm alebo zadá vlastný presný ¹írkový rozmer. Vý¹ka voµne stojacej kombinovanej chladnièky s mraznièkou: zákazník zadá hodnotu v mm.
