@@ -20,3 +20,7 @@ A web-based kitchen designer tool that allows customers to configure room dimens
 
 - Frontend: JavaScript (Three.js or Babylon.js for 3D)
 - AI: Claude (image analysis, JSON extraction)
+
+## Project spec
+
+The full specification (in Slovak) is in [`cloude_instrukcie.txt`](cloude_instrukcie.txt).
